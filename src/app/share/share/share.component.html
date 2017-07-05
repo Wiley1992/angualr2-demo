@@ -1,0 +1,14 @@
+<ons-list-title>{{header}}</ons-list-title>
+<ons-list>
+  <ons-list-item>
+    <div class="left">{{name}}</div>
+    <div class="center">
+      <input type="text" class="text-input" placeholder="请输入名称" [(ngModel)]="custName" (ngModelChange)="changed($event)" />
+
+      <input [(value)]="custName" (input)="wInput(custName = $event.target.value)" />
+    </div>
+    <div class="right">
+      <button class="button button--outline" (click)="nowValue()">当前值</button>
+    </div>
+  </ons-list-item>
+</ons-list>

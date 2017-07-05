@@ -1,0 +1,23 @@
+<ons-page class="page">
+  <ons-toolbar>
+    <div class="left">
+      <button class="button--quiet" (click)="goBack()">返回</button>
+    </div>
+    <div class="center"> collection </div>
+    <div class="right"> </div>
+  </ons-toolbar>
+
+  <w-input [header]="header" [name]="name" [(custName)]="value" (valueChange)="valueChange($event)">
+  </w-input>
+
+  <w-radio *ngIf="isShow"></w-radio>
+  <w-checkbox></w-checkbox>
+
+  <w-text [header]="textHeader"></w-text>
+
+
+
+  <button class="button--large--cta" style="width: 95%; margin: 0 auto;" (click)="showValue()">
+    确定
+  </button>
+</ons-page>

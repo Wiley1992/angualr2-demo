@@ -1,0 +1,24 @@
+<ons-page class="page">
+  <ons-toolbar>
+    <div class="left">
+      <button class="button--quiet" (click)="goBack()">返回</button>
+    </div>
+    <div class="center"> list </div>
+    <div class="right"> </div>
+  </ons-toolbar>
+
+  <div class="content">
+
+    <input type="search" [(ngModel)]="searchStr" placeholder="Search" class="search-input search-input--material" style="width: 100%;">
+
+    <ons-list *ngFor="let custGroup of custList">
+      <ons-list-header>{{custGroup.head}}</ons-list-header>
+      <div *ngFor="let cust of (custGroup.data | myPipe:searchStr)" (click)='custClick(cust)'>
+        <ons-list-item>
+          {{cust.custName | formate}}
+        </ons-list-item>
+      </div>
+    </ons-list>
+
+  </div>
+</ons-page>
